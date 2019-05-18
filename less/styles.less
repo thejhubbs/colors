@@ -1,0 +1,142 @@
+//The colors for the top navigation bar
+@nav-bg-color: @light-dark-color;
+@nav-title-color: @light-color;
+@nav-link-color: lighten(@light-main-color, 10%);
+//Main area background color
+@page-bg-color: @light-light-color;
+@alt-page-bg-color: @light-color;
+//Side and far background color
+@html-bg-color: @light-color;
+
+//Background image for main call to action
+@bg-img-name: 'computer.jpg';
+//If different source folder edit this line
+@main-bg-img-link: ~"url('../img/@{bg-img-name}')";
+
+//Settings for borders
+@default-border: 1px solid @dark-color;
+@default-border-radius: 4px;
+
+// font-family: 'Ubuntu', sans-serif;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Abril Fatface', cursive;
+// font-family: 'Righteous', cursive;
+// font-family: 'Luckiest Guy', cursive;
+// font-family: 'Armata', sans-serif;
+//Three default categories for text colors & fonts.
+//Main text is most p tags, links, and buttons. 
+//Should be plain and readable.
+@main-text-color: @dark-color;
+@main-text-font: "Armata";
+//Header text includes most headers, h2s-h5s.
+//Should be easy to read, but stand out.
+@header-text-color: @secondary-color;
+@header-text-font: "Oswald";
+//Top text is loosely h1s & h2s. 
+//Should be unique to capture attention. Displayed large.
+@top-text-color: @highlight-color;
+@top-text-font: "Luckiest Guy";
+
+@unique-text-font: "Righteous";
+
+//Link colors
+@link-color: @main-color;
+@link-hover: @highlight-color;
+
+//Button colors
+@default-button-text-color: @main-text-color;
+@default-button-bg-color: @light-color;
+
+@primary-button-text-color: @light-color;
+@primary-button-bg-color: @highlight-color;
+
+@secondary-button-text-color: @light-color;
+@secondary-button-bg-color: @secondary-color;
+
+@cancel-button-text-color: @light-color;
+@cancel-button-bg-color: @cancel-color;
+
+@confirm-button-text-color: @light-color;
+@confirm-button-bg-color: @confirm-color;
+
+
+/* ========================================= 
+COMPLETE COLORS SET
+===========================================*/
+//Full Colors SET HERE 
+//
+@transparent-main-color: fadeout(@main-color, 30%);
+@transparent-secondary-color: fadeout(@secondary-color, 30%);
+@transparent-highlight-color: fadeout(@highlight-color, 30%);
+@transparent-dark-color: fadeout(@dark-color, 30%);
+@transparent-light-color: fadeout(@light-color, 30%);
+@transparent-grey-color: fadeout(@grey-color, 30%);
+//
+@dark-main-color: darken(@main-color, 10);
+@dark-secondary-color: darken(@secondary-color, 10);
+@dark-highlight-color: darken(@highlight-color, 10);
+@dark-dark-color: darken(@dark-color, 10);
+@dark-light-color: darken(@light-color, 10);
+@dark-grey-color: darken(@grey-color, 10);
+//
+@light-main-color: lighten(@main-color, 10);
+@light-secondary-color: lighten(@secondary-color, 10);
+@light-highlight-color: lighten(@highlight-color, 10);
+@light-dark-color: lighten(@dark-color, 10);
+@light-light-color: lighten(@light-color, 10);
+@light-grey-color: lighten(@grey-color, 10);
+
+
+
+//*************************
+//     TEXT/FONTS
+//*************************
+.set-font-styles(@font, @font-size, @color, @margin, @line-height) {
+    font-family: ~"@{font}, serif";
+    font-size: @font-size;
+    color: @color;
+    margin: @margin;
+    line-height: @line-height;
+}
+
+
+a, html { font-family: @main-text-font;}
+li {line-height:1.8;}
+h1 {
+    .set-font-styles(@unique-text-font, 4rem, @top-text-color, 5px 0, 1); 
+}
+h2 {
+    .set-font-styles(@top-text-font, 3rem, @top-text-color, 5px 0, 1); 
+}
+h3 {
+    .set-font-styles(@header-text-font, 2rem, @header-text-color, 5px 0, 1); 
+}
+h4 {
+    .set-font-styles(@header-text-font, 1.5rem, @header-text-color, 5px 0, 1); 
+}
+h5 {
+    .set-font-styles(@header-text-font, 1rem, @main-text-color, 5px 0, 1.5); 
+}
+h6 {
+    .set-font-styles(@main-text-font, .8rem, @header-text-color, 5px 0, 1.5); 
+}
+p {
+    .set-font-styles(@main-text-font, 1rem, @main-text-color, 5px 0, 1.5); 
+}
+
+.subtext {
+	display:block;
+	font-size:80%;
+}
+
+//***************************
+//      Links
+//***************************
+
+a {
+    color:@link-color;
+    text-decoration:none;
+    
+    &:visited {color:@link-color;}
+    &:hover {color:@link-hover;}
+}
